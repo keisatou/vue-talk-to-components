@@ -3,6 +3,7 @@
     <h3>You may view the User Details here</h3>
     <p>Many Details</p>
     <p>User Name: {{ switchName() }}</p>
+    <p>User Age: {{ userAge }}</p>
     <!-- reset name using Custom Event -->
     <button @click="resetName()">Reset</button>
 
@@ -20,6 +21,7 @@ export default {
       default: 'Max',
     },
     resetFn: Function,
+    userAge: Number,
   },
   methods: {
     switchName() {

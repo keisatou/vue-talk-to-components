@@ -9,10 +9,10 @@
       <div class="col-xs-12 col-sm-6">
         <!-- IMPORTANT: if event is not passed (via @nameWasReset in this case) the name does not change in parent component -->
         <!-- <app-user-detail :name="name"></app-user-detail> -->
-        <app-user-detail :name="name" @nameWasReset="name = $event" :resetFn="resetName"></app-user-detail>
+        <app-user-detail :name="name" @nameWasReset="name = $event" :resetFn="resetName" :userAge="age"></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <app-user-edit></app-user-edit>
+        <app-user-edit :userAge="age"></app-user-edit>
       </div>
     </div>
   </div>
@@ -25,7 +25,8 @@ import UserEdit from './UserEdit.vue';
 export default {
   data: function() {
     return {
-      name: 'max'
+      name: 'max',
+      age: 27,
     };
   },
   methods: {
