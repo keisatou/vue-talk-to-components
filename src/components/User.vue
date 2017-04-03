@@ -9,7 +9,7 @@
       <div class="col-xs-12 col-sm-6">
         <!-- IMPORTANT: if event is not passed (via @nameWasReset in this case) the name does not change in parent component -->
         <!-- <app-user-detail :name="name"></app-user-detail> -->
-        <app-user-detail :name="name" @nameWasReset="name = $event"></app-user-detail>
+        <app-user-detail :name="name" @nameWasReset="name = $event" :resetFn="resetName"></app-user-detail>
       </div>
       <div class="col-xs-12 col-sm-6">
         <app-user-edit></app-user-edit>
@@ -30,7 +30,10 @@ export default {
   },
   methods: {
     changeName() {
-      this.name = 'anna'
+      this.name = 'anna';
+    },
+    resetName() {
+      this.name = 'Max';
     }
   },
   components: {
