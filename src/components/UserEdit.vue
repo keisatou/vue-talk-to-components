@@ -13,6 +13,7 @@ export default {
   methods: {
     editAge() {
       this.userAge = 30;
+      this.$emit('ageWasEdited', this.userAge);
     }
   },
 }
